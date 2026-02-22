@@ -4,7 +4,7 @@
 <div class="card">
     <h2>My Tasks</h2>
 
-    <!-- Форма добавления новой задачи -->
+    <!-- Add New Task Form -->
     <form method="POST" action="{{ url_for('add_task') }}">
         <input type="text" name="content" placeholder="New task..." required>
 
@@ -19,14 +19,14 @@
         <button type="submit">Add</button>
     </form>
 
-    <!-- Фильтры -->
+    <!-- Filter -->
     <div class="filters">
         <a href="{{ url_for('dashboard', filter='all') }}">All</a>
         <a href="{{ url_for('dashboard', filter='active') }}">Active</a>
         <a href="{{ url_for('dashboard', filter='completed') }}">Completed</a>
     </div>
 
-    <!-- Список задач -->
+    <!-- Task List -->
     {% if tasks %}
         <ul class="task-list">
             {% for task in tasks %}
