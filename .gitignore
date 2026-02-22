@@ -1,0 +1,26 @@
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Virtual environment ---
+venv/
+env/
+ENV/
+
+# --- SQLite база ---
+database.db
+
+# --- Секреты / конфигурации ---
+*.env
+*.secret
+
+# --- IDE / редактор ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# --- MacOS системные файлы ---
+.DS_Store

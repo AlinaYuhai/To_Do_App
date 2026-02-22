@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+   <nav class="navbar">
+    <div class="nav-left">
+        <a href="{{ url_for('stats') }}">Stats</a>
+        <button onclick="toggleTheme()" class="theme-btn">🌙</button>
+    </div>
+
+    <div class="nav-center">
+         <a href="{{ url_for('dashboard') }}" class="logo">📚 Study Planner</a>
+    </div>
+
+    <div class="nav-right">
+        <span>{{ current_user.username }}</span>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</nav>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Study Planner</title>
+</head>
+<body>
+<div class="container">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="flash">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+</div>
+<script>
+function toggleTheme() {
+    document.body.classList.toggle("dark");
+    localStorage.setItem("theme",
+        document.body.classList.contains("dark") ? "dark" : "light"
+    );
+}
+
+window.onload = function() {
+    if(localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark");
+    }
+}
+</script>
+
+</body>
+</html>

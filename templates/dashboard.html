@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+    <h2>My Tasks</h2>
+
+    <!-- Форма добавления новой задачи -->
+    <form method="POST" action="{{ url_for('add_task') }}">
+        <input type="text" name="content" placeholder="New task..." required>
+
+        <input type="date" name="deadline">
+
+        <select name="priority">
+            <option value="Low">Low</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="High">High</option>
+        </select>
+
+        <button type="submit">Add</button>
+    </form>
+
+    <!-- Фильтры -->
+    <div class="filters">
+        <a href="{{ url_for('dashboard', filter='all') }}">All</a>
+        <a href="{{ url_for('dashboard', filter='active') }}">Active</a>
+        <a href="{{ url_for('dashboard', filter='completed') }}">Completed</a>
+    </div>
+
+    <!-- Список задач -->
+    {% if tasks %}
+        <ul class="task-list">
+            {% for task in tasks %}
+                <li class="{{ 'done' if task.completed }}">
+                    <div>
+                        <strong>{{ task.content }}</strong><br>
+                        {% if task.deadline %}
+                            📅 {{ task.deadline }}
+                        {% endif %}
+                        <span class="priority {{ task.priority }}">
+                            {{ task.priority }}
+                        </span>
+                    </div>
+                    <div class="actions">
+                        <a href="{{ url_for('complete_task', id=task.id) }}">✔</a>
+                        <a href="{{ url_for('delete_task', id=task.id) }}">✖</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You have no tasks yet 😎</p>
+    {% endif %}
+</div>
+
+{% endblock %}

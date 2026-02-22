@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+    <h2>📊 Statistics</h2>
+    <p>Total tasks: {{ total }}</p>
+    <p>Completed: {{ completed }}</p>
+    <p>Active: {{ active }}</p>
+    <h3>Productivity:: {{ productivity }}%</h3>
+</div>
+
+{% endblock %}

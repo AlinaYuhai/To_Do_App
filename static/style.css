@@ -1,0 +1,257 @@
+/* --- Navbar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+/* Ссылка-логотип в центре navbar */
+.nav-center a.logo {
+    color: #fff;           /* белый текст */
+    text-decoration: none; /* убираем подчеркивание */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Наведение на ссылку */
+.nav-center a.logo:hover {
+    color: #fff;           /* белый при наведении */
+}
+
+/* Для тёмной темы тоже */
+body.dark .nav-center a.logo {
+    color: #fff;
+}
+
+.nav-left, .nav-center, .nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-left a,
+.nav-right a,
+.nav-left button {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.nav-center {
+    flex: 1;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.nav-right span {
+    margin-right: 10px;
+}
+
+/* --- Тёмная тема для navbar --- */
+body.dark .navbar {
+    background: #3a3a50;
+}
+
+body.dark .nav-left a,
+body.dark .nav-right a,
+body.dark .nav-left button {
+    color: #ccc;
+}
+
+body.dark .nav-center {
+    color: #fff;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: #fffef9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* --- Карточки --- */
+.card {
+    background: #fcf5ea;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* --- Заголовки --- */
+h2 {
+    margin-top: 60;
+    align-content: center;
+}
+
+/* --- Форма добавления задач --- */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+form input[type="text"],
+form input[type="date"],
+form select {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #f9cfa2;
+    font-size: 14px;
+}
+
+form button {
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+form button:hover {
+    background: #45a049;
+}
+
+/* --- Список задач --- */
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    background: #ffffff;
+    transition: 0.2s;
+}
+
+.task-list li.done {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+.task-list li:hover {
+    background: #f0f0f0;
+}
+
+.task-list .actions a {
+    margin-left: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #555;
+    transition: 0.2s;
+}
+
+.task-list .actions a:hover {
+    color: #000;
+}
+
+/* --- Приоритет --- */
+.priority {
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.priority.Low {
+    background: #c6f6d5;
+    color: #22543d;
+}
+
+.priority.Medium {
+    background: #fefcbf;
+    color: #744210;
+}
+
+.priority.High {
+    background: #fed7d7;
+    color: #742a2a;
+}
+
+/* --- Фильтры --- */
+.filters {
+    margin-bottom: 15px;
+}
+
+.filters a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.filters a:hover {
+    color: #000;
+}
+
+/* --- Тёмная тема --- */
+body.dark {
+    background: #1e1e2f;
+    color: #fff;
+}
+
+body.dark .card {
+    background: #2c2c3e;
+    color: #fff;
+}
+
+body.dark input,
+body.dark select {
+    background: #3a3a50;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+body.dark form button {
+    background: #6fcf97;
+}
+
+body.dark form button:hover {
+    background: #57b57d;
+}
+
+body.dark .task-list li {
+    background: #383850;
+}
+
+body.dark .task-list li:hover {
+    background: #4a4a68;
+}
+
+body.dark .task-list .actions a {
+    color: #ccc;
+}
+
+body.dark .task-list .actions a:hover {
+    color: #fff;
+}
