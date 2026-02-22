@@ -10,7 +10,7 @@
     margin-bottom: 20px;
     font-weight: bold;
 }
-/* Ссылка-логотип в центре navbar */
+/* Logo */
 .nav-center a.logo {
     color: #fff;           /* белый текст */
     text-decoration: none; /* убираем подчеркивание */
@@ -18,12 +18,12 @@
     font-weight: bold;
 }
 
-/* Наведение на ссылку */
+/* Hovering over a link */
 .nav-center a.logo:hover {
     color: #fff;           /* белый при наведении */
 }
 
-/* Для тёмной темы тоже */
+/* For Dark Mode*/
 body.dark .nav-center a.logo {
     color: #fff;
 }
@@ -56,7 +56,7 @@ body.dark .nav-center a.logo {
     margin-right: 10px;
 }
 
-/* --- Тёмная тема для navbar --- */
+/* --- Dark Mode navbar --- */
 body.dark .navbar {
     background: #3a3a50;
 }
@@ -85,7 +85,7 @@ body {
     padding: 0 20px;
 }
 
-/* --- Карточки --- */
+/* --- Cards --- */
 .card {
     background: #fcf5ea;
     border-radius: 15px;
@@ -94,13 +94,13 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* --- Заголовки --- */
+/* --- Titles --- */
 h2 {
     margin-top: 60;
     align-content: center;
 }
 
-/* --- Форма добавления задач --- */
+/* --- Add Task Form --- */
 form {
     display: flex;
     flex-wrap: wrap;
@@ -133,7 +133,7 @@ form button:hover {
     background: #45a049;
 }
 
-/* --- Список задач --- */
+/* --- Task List --- */
 .task-list {
     list-style: none;
     padding: 0;
@@ -173,7 +173,7 @@ form button:hover {
     color: #000;
 }
 
-/* --- Приоритет --- */
+/* --- Priority --- */
 .priority {
     padding: 3px 8px;
     border-radius: 6px;
@@ -197,7 +197,7 @@ form button:hover {
     color: #742a2a;
 }
 
-/* --- Фильтры --- */
+/* --- Filter --- */
 .filters {
     margin-bottom: 15px;
 }
@@ -214,7 +214,7 @@ form button:hover {
     color: #000;
 }
 
-/* --- Тёмная тема --- */
+/* --- Dark mode --- */
 body.dark {
     background: #1e1e2f;
     color: #fff;
